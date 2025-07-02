@@ -1,0 +1,26 @@
+{
+  "name": "mfe-architecture",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "app-shell",
+    "dashboard-mfe",
+    "design-system-mfe",
+    "user-profile-mfe"
+  ],
+  "scripts": {
+    "start": "concurrently \"npm run start:design-system\" \"npm run start:dashboard\" \"npm run start:user-profile\" \"npm run start:app-shell\"",
+    "start:app-shell": "cd app-shell && npm start",
+    "start:dashboard": "cd dashboard-mfe && npm start",
+    "start:design-system": "cd design-system-mfe && npm start",
+    "start:user-profile": "cd user-profile-mfe && npm start",
+    "build": "npm run build:design-system && npm run build:dashboard && npm run build:user-profile && npm run build:app-shell",
+    "build:app-shell": "cd app-shell && npm run build",
+    "build:dashboard": "cd dashboard-mfe && npm run build",
+    "build:design-system": "cd design-system-mfe && npm run build",
+    "build:user-profile": "cd user-profile-mfe && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
