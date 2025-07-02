@@ -42,7 +42,7 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'design_system_mfe',
+      name: 'designSystem',
       filename: 'remoteEntry.js',
       exposes: {
         "./Button": "./src/components/Button",
@@ -61,7 +61,7 @@ module.exports = {
     }),
   ],
   devServer: {
-    port: 3000,
+    port: 3001,
     open: true,
     hot: true,
     compress: true,
